@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Abi</title>
+    <link rel="stylesheet" href="../static/main.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1> IT-Abi</h1>
+        <li><a href="{{url_for('log')}}">logi</a></li>
+        <h3> Palun kirjeldage probleemist lahtritesse</h3>
+
+        <form action="{{url_for('success')}}" method="POST">
+            <input title="Sinu probleem on turvaline" placeholder="Sisesta oma probleemist" type="text"
+                name="problem_name" required> <br>
+            <input title="Sinu ruum on turvaline" placeholder="Sisesta enda ruumi number" type="text" name="room_name"
+                required> <br>
+
+            <select name=valik_list method="GET" action="/">
+                {% for valik in valik_list %}
+                <option value="{{valik}}" SELECTED>{{ valik }}</option>"
+                {% endfor %}
+            </select>
+            <button type="submit"> Saada </button>
+        </form>
+
+
+
+    </div>
+</body>
+
+</html>
